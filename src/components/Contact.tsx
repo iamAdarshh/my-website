@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export default function Contact() {
   return (
     <section id="contact" className="py-24 bg-zinc-900 text-white">
@@ -7,29 +9,26 @@ export default function Contact() {
           I'm currently open for new opportunities. Whether you have a question or just want to say
           hi, I'll try my best to get back to you!
         </p>
-        <div className="flex justify-center gap-4">
-          <a
-            href="mailto:adarshchoudharyb371@gmail.com"
-            className="px-6 py-3 bg-white text-zinc-900 rounded-lg font-medium hover:bg-zinc-200 transition-colors"
-          >
+        <div className="flex justify-center gap-4 flex-wrap">
+          <Button href="mailto:adarshchoudharyb371@gmail.com" variant="white">
             Say Hello
-          </a>
-          <a
+          </Button>
+          <Button
             href="https://github.com/iamAdarshh"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 bg-zinc-800 text-white rounded-lg font-medium hover:bg-zinc-700 transition-colors flex items-center gap-2"
+            variant="dark"
           >
             GitHub
-          </a>
-          <a
+          </Button>
+          <Button
             href="https://www.linkedin.com/in/choudhary-adarsh/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 bg-zinc-800 text-white rounded-lg font-medium hover:bg-zinc-700 transition-colors flex items-center gap-2"
+            variant="dark"
           >
             LinkedIn
-          </a>
+          </Button>
         </div>
       </div>
     </section>

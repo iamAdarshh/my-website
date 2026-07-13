@@ -7,6 +7,7 @@ export type EducationType = {
   description: string;
   activities: string[];
   skills: string[];
+  grade?: string;
 }
 
 export default function Education() {
@@ -30,6 +31,7 @@ export default function Education() {
       description: "",
       activities: [],
       skills: [],
+      grade: "CGPA: 9.33/10"
     }
   ];
 
@@ -47,15 +49,18 @@ export default function Education() {
               <h3 className="text-lg font-medium text-zinc-900">
                 {edu.degree} in {edu.fieldOfStudy}
               </h3>
-              <div className="text-sm text-zinc-500 mb-3 flex flex-wrap gap-x-2">
-                <span className="font-medium text-zinc-700">{edu.school}</span>
-                <span>•</span>
-                <span>{edu.date}</span>
+              <div className="text-sm text-zinc-500 mb-3 leading-relaxed">
+                <span className="font-medium text-zinc-700 inline after:content-['•'] after:mx-2 after:text-zinc-300 after:font-light">{edu.school}</span>
+                <span className={`inline ${edu.location || edu.grade ? "after:content-['•'] after:mx-2 after:text-zinc-300 after:font-light" : ""}`}>{edu.date}</span>
                 {edu.location && (
-                  <>
-                    <span>•</span>
-                    <span>{edu.location}</span>
-                  </>
+                  <span className={`inline ${edu.grade ? "after:content-['•'] after:mx-2 after:text-zinc-300 after:font-light" : ""}`}>{edu.location}</span>
+                )}
+                {edu.grade && (
+                  <span className="inline align-middle">
+                    <span className="text-xs font-medium text-zinc-700 bg-zinc-100 px-2 py-0.5 rounded-md border border-zinc-200">
+                      {edu.grade}
+                    </span>
+                  </span>
                 )}
               </div>
               {edu.description && (

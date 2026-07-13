@@ -1,4 +1,5 @@
 import profile from '../assets/Adarsh_profile_image.jpg';
+import Button from './Button';
 
 export default function Hero() {
   return (
@@ -16,25 +17,21 @@ export default function Hero() {
           development.
         </p>
         <div className="flex flex-wrap justify-center md:justify-start gap-4">
-          <a
-            href="#contact"
-            className="px-6 py-3 bg-zinc-900 text-white rounded-lg font-medium hover:bg-zinc-800 transition-colors"
-          >
+          <Button href="#contact" variant="primary">
             Get in touch
-          </a>
-          <a
-            href="#projects"
-            className="px-6 py-3 bg-zinc-100 text-zinc-900 rounded-lg font-medium hover:bg-zinc-200 transition-colors"
-          >
+          </Button>
+          <Button href="#projects" variant="secondary">
             View Projects
-          </a>
+          </Button>
         </div>
       </div>
       <div className="w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden shrink-0 bg-zinc-100 ring-4 ring-white shadow-xl">
         <img
           src={profile}
           alt="Adarsh Choudhary"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover pointer-events-none select-none"
+          draggable={false}
+          onContextMenu={(e) => e.preventDefault()}
           onError={(e) => {
             // Fallback if profile.jpg doesn't exist yet
             e.currentTarget.src = "https://ui-avatars.com/api/?name=Adarsh+Choudhary&size=512&background=f4f4f5&color=18181b";

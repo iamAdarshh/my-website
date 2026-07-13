@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 interface Project {
   title: string;
   role?: string;
@@ -80,14 +82,14 @@ export default function Projects() {
                 {project.title}
               </h3>
               {(project.role || project.duration || project.grade) && (
-                <div className="text-sm text-zinc-500 mb-3 flex flex-wrap items-center gap-x-2 gap-y-1">
-                  {project.role && <span className="font-medium text-zinc-700">{project.role}</span>}
-                  {project.role && (project.duration || project.grade) && <span>•</span>}
-                  {project.duration && <span>{project.duration}</span>}
-                  {project.duration && project.grade && <span>•</span>}
+                <div className="text-sm text-zinc-500 mb-3 leading-relaxed">
+                  {project.role && <span className={`font-medium text-zinc-700 inline ${project.duration || project.grade ? "after:content-['•'] after:mx-2 after:text-zinc-300 after:font-light" : ""}`}>{project.role}</span>}
+                  {project.duration && <span className={`inline ${project.grade ? "after:content-['•'] after:mx-2 after:text-zinc-300 after:font-light" : ""}`}>{project.duration}</span>}
                   {project.grade && (
-                    <span className="text-xs font-medium text-zinc-700 bg-zinc-100 px-2 py-0.5 rounded-md border border-zinc-200">
-                      Grade: {project.grade}
+                    <span className="inline align-middle">
+                      <span className="text-xs font-medium text-zinc-700 bg-zinc-100 px-2 py-0.5 rounded-md border border-zinc-200">
+                        Grade: {project.grade}
+                      </span>
                     </span>
                   )}
                 </div>
@@ -107,15 +109,15 @@ export default function Projects() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <a
+          <Button
             href="https://github.com/iamAdarshh"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-zinc-200 text-zinc-900 rounded-lg font-medium hover:bg-zinc-50 hover:border-zinc-300 transition-colors shadow-sm"
+            variant="outline"
           >
             View More on GitHub
             <span className="material-symbols-rounded text-xl">arrow_outward</span>
-          </a>
+          </Button>
         </div>
       </div>
     </section>

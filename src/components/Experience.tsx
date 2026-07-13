@@ -81,12 +81,10 @@ export default function Experience() {
                 <h3 className="text-lg font-medium text-zinc-900">{exp.role}</h3>
                 <span className="text-xs font-medium text-zinc-600 bg-zinc-200/60 px-2 py-0.5 rounded-md">{exp.employmentType}</span>
               </div>
-              <div className="text-sm text-zinc-500 mb-3 flex flex-wrap gap-x-2">
-                <span className="font-medium text-zinc-700">{exp.company}</span>
-                <span>•</span>
-                <span>{exp.date}</span>
-                <span>•</span>
-                <span>{exp.location} ({exp.locationType})</span>
+              <div className="text-sm text-zinc-500 mb-3 leading-relaxed">
+                <span className="font-medium text-zinc-700 inline after:content-['•'] after:mx-2 after:text-zinc-300 after:font-light">{exp.company}</span>
+                <span className="inline after:content-['•'] after:mx-2 after:text-zinc-300 after:font-light">{exp.date}</span>
+                <span className="inline">{exp.location} ({exp.locationType})</span>
               </div>
               <ul className="list-disc list-outside ml-4 space-y-2 text-zinc-600 leading-relaxed marker:text-zinc-400">
                 {exp.description.map((desc, j) => (

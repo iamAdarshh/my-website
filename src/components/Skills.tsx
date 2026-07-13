@@ -37,16 +37,13 @@ export default function Skills() {
           {skills.map((skillGroup, i) => (
             <div key={i} className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8">
               <h3 className="text-zinc-900 font-medium md:w-48 shrink-0">{skillGroup.category}</h3>
-              <div className="flex flex-wrap text-zinc-600 leading-relaxed">
+              <ul className="text-zinc-600 leading-relaxed">
                 {skillGroup.items.map((item, j) => (
-                  <span key={j}>
+                  <li key={j} className="inline after:content-['•'] after:mx-2 after:text-zinc-300 after:font-light last:after:hidden">
                     {item}
-                    {j < skillGroup.items.length - 1 && (
-                      <span className="text-zinc-300 mx-2 font-light">•</span>
-                    )}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>
