@@ -19,6 +19,14 @@ export default function Activities() {
       locationType: "Onsite",
       description: "As a volunteer at the WeAreDevelopers World Congress in Berlin, I actively supported the smooth operation of one of Europe's largest tech conferences. My responsibilities included assisting attendees with inquiries, guiding them through the venue, managing registration desks, and ensuring timely communication between participants and event staff. This role provided me with firsthand exposure to a world-class tech ecosystem, allowing me to network with industry leaders, learn about the latest trends in AI, software engineering, and product development, and contribute to a vibrant international community of developers and innovators."
     },
+    {
+      "title": "MLH HackOn 2.0",
+      "role": "Participant",
+      "date": "28-30 May 2021",
+      "location": "Virtual",
+      "locationType": "Online",
+      "description": "Collaborated in a team of three during an intensive 48-hour hackathon to develop 'Eunoia', a Django-based mental health web application. Engineered a platform featuring a custom user assessment test that algorithmically curates and recommends targeted blog posts authored by verified experts based on individual results."
+    },
   ];
 
   return (
